@@ -51,3 +51,100 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* ********************************
+           MAIN STYLES
+************************************/
+
+
+/* always give your site a maximum width */
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color:aqua;
+}
+
+h1 {
+    font-size: 2.2em;
+    /* an em is always relative to the current font size, which by default is set to 16px
+    (2.2 x 16px = 35.2px) */
+    /* you can set padding and margin based on an element's font size with em */
+    padding: 0.5em; /*0.5 x 35.2 = 17.6px */
+
+    /* an rem is relative to the root font size (either the default of 16px, 
+    or whatever font size you set on the html tag) */
+    margin-bottom: 1rem; /* 1 x 16px = 16px */
+
+}
+
+h3 { 
+    font-size: 1.6em;
+    padding: 0,5em;
+}
+article div {
+    font-size: 36px;
+    padding: 10px;
+    border: 2px solid darkblue;
+    background-color: lightblue;
+}
+section:nth-of-type(1) article{
+    /* nth child grabs an element based on its position in its parent,
+    regardless od whar type of elements are there\
+    nth-of-type will only selct emements at that position if it matches the emelent type */
+    /* display felx, by default, flexbox will lay things next to eachother*/
+    display: flex;
+    
+}
+
+section:nth-of-type(2) article {
+    display:flex;
+    /* the direction of the flex is relative to the lanuage 
+    the site is written in  */
+    flex-direction: row-reverse;
+
+    /* flex direction can also be colomn, 
+    if you want things stacked vertically */
+}
+
+section:nth-of-type(3) article {
+display:flex;
+/* there are mutiple ways to space 
+the elements in your flexbox (or to justify the content)*/
+    /* flex-start, flex-end, and center which 
+    move the content around 
+
+        -speace-between spreads the elements out with an equal
+            amount of space between them
+        -space-around spreads the elements out with and equal amount
+            of space on either side of each element
+        -space-evenly equally distrubutes the elements within 
+            the available space*/
+        
+justify-content: space-evenly;
+
+}
+
+section:nth-of-type(4) article {
+    display:flex;
+    gap: 4px;
+
+    /* you can also add a little bit of space between 
+    the elements with gap: */
+}
+
+/* you can tell each object inside the flex to grow to take 
+up the available space */
+
+section:nth-of-type(4) article div {
+    flex-grow: 1;
+    /* the number you give to flex-grow is a ratio, 
+    so if one element has a flex-grow of 1 and another has a flex-grow of 2,
+    the second element will take up twice as much space as the first */
+}
+
+/* you can tell individual elements to take up more 
+(or less) space than other elements */
+
+section:nth-of-type(4) article div:nth-of-type(2) {
+    flex-grow: 2;
+}
